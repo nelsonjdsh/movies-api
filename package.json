@@ -5,6 +5,10 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+
+  "engines": {
+    "node": "14.15.4"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "postinstall": "npm run prestart:prod",
