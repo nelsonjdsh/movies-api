@@ -7,7 +7,7 @@ export class MoviesController {
     @Get()
     getMovies(){
         return ({
-           Response: 'Movies'
+           Response: 'Vladimir MMG y RANDY RAPA TU MADRE'
         });
     }
 }
