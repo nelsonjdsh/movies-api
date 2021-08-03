@@ -1,18 +1,31 @@
-import { Controller, Get, Post } from '@nestjs/common';
-import movies from '../data/movies.json';  
+import { Controller, Get, Post, Body, Req } from '@nestjs/common';
+// import {Response, Router} from 'express'
+import * as Movie from '../data/movies.json';
 
 @Controller('movies')
 export class MoviesController {
-
+    
+    
     @Get()
-    getMovies(res){
-       res.json(movies)
+    getMovies(){
+       return Movie
     }
 
     @Post()
-    postMovie(){
-        return ({
-            Message: 'Movie Created!'
-        })
+    postMovie(@Req() req) {
+        const {nombre, genero, protagonizando, director, escritor, rating, estreno, duracion, idioma, sinopsis} = req.body;
+        
+        if (nombre && genero && protagonizando && director && escritor && rating && estreno && duracion && idioma && sinopsis)
+        {
+            console.log(req.body);
+            const id = Movie.length + 1;
+            const newMovie = {id, ...req.body};
+            console.log(newMovie);
+            Movie.push(newMovie);
+            return "Pelicula Añadida";
+        }
+        else{
+            return "Bad Request"
+        }
     }
 }

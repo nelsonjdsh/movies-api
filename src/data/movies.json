@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "nombre": "Tokischa el documental",
         "genero": "Documental",
         "protagonizando": "Tokischa Trapterrestre",
@@ -12,5 +12,21 @@
         "idioma": "Español",
         "sinopsis": "Un documental picante acerca de la cantautora del trap Tokischa."
 
+    },
+
+    {
+        "id": 2,
+        "nombre": "Aventura The Comeback",
+        "genero": "Accion, Aventura, Musical",
+        "protagonizando": "Aventura",
+        "director": "Tuti",
+        "escritor": "Nelson",
+        "rating": "R18",
+        "estreno": "Agosto 21, 2021",
+        "duracion": "2:05:00",
+        "idioma": "Bachata",
+        "sinopsis": "Un documental picante acerca de la cantautora del trap Tokischa."
+
     }
+
 ]
