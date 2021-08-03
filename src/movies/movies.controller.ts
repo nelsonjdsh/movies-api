@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Req } from '@nestjs/common';
 // import {Response, Router} from 'express'
-import * as Movie from '../data/movies.json';
+import * as Movie from '../movies.json';
 import {writeFile} from 'fs';
 @Controller('movies')
 export class MoviesController {
@@ -22,7 +22,7 @@ export class MoviesController {
             const newMovie = {id, ...req.body};
             console.log(newMovie);
             Movie.push(newMovie);
-            writeFile('../src/data/movies.json', JSON.stringify(Movie), 'utf8', callback);
+            writeFile('src/movies.json', JSON.stringify(Movie), 'utf8', callback);
             return ({
                 message: "Movie Added"
             }) 
