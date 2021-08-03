@@ -1,5 +1,16 @@
 [
     {
-        
+        "id": "1",
+        "nombre": "Tokischa el documental",
+        "genero": "Documental",
+        "protagonizando": "Tokischa Trapterrestre",
+        "director": "Nelson",
+        "escritor": "Tuti",
+        "rating": "R18",
+        "estreno": "Agosto 21, 2021",
+        "duracion": "45:00",
+        "idioma": "Español",
+        "sinopsis": "Un documental picante acerca de la cantautora del trap Tokischa."
+
     }
 ]
