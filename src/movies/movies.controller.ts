@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Body, Req } from '@nestjs/common';
+import { Controller, Get, Post, Req } from '@nestjs/common';
 // import {Response, Router} from 'express'
 import * as Movie from '../data/movies.json';
-
+import {writeFile} from 'fs';
 @Controller('movies')
 export class MoviesController {
     
@@ -17,11 +17,12 @@ export class MoviesController {
         
         if (nombre && genero && protagonizando && director && escritor && rating && estreno && duracion && idioma && sinopsis)
         {
-            console.log(req.body);
             const id = Movie.length + 1;
+            const callback = (err) => { if (err) { throw err; } console.log("Updated...") };
             const newMovie = {id, ...req.body};
             console.log(newMovie);
             Movie.push(newMovie);
+            writeFile('../movies-api/src/data/movies.json', JSON.stringify(Movie), 'utf8', callback);
             return ({
                 message: "Movie Added"
             }) 
