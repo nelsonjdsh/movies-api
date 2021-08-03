@@ -22,10 +22,14 @@ export class MoviesController {
             const newMovie = {id, ...req.body};
             console.log(newMovie);
             Movie.push(newMovie);
-            return "Pelicula Añadida";
+            return ({
+                message: "Movie Added"
+            }) 
         }
         else{
-            return "Bad Request"
+            return ({
+                message: "Bad Request"
+            }) 
         }
     }
 }
