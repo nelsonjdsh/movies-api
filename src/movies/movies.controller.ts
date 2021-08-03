@@ -22,7 +22,7 @@ export class MoviesController {
             const newMovie = {id, ...req.body};
             console.log(newMovie);
             Movie.push(newMovie);
-            writeFile('../movies-api/src/data/movies.json', JSON.stringify(Movie), 'utf8', callback);
+            writeFile('../src/data/movies.json', JSON.stringify(Movie), 'utf8', callback);
             return ({
                 message: "Movie Added"
             }) 
