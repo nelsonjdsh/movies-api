@@ -1,13 +1,12 @@
 import { Controller, Get, Post } from '@nestjs/common';
+import movies from '../data/movies.json';  
 
-@Controller('tuti')
+@Controller('movies')
 export class MoviesController {
 
     @Get()
-    getMovies(){
-        return ({
-           Response: 'movies'
-        });
+    getMovies(res){
+       res.json(movies)
     }
 
     @Post()
